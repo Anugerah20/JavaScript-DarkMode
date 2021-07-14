@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <style>
+        body {
+            margin: 0 auto;
+            font-family: sans-serif;
+            width: 80%;
+        }
+        
+        .submit {
+            padding: 10px 30px;
+            background: rgb(78, 10, 78);
+            border: none;
+            border-radius: 5px;
+            color: rgb(209, 204, 204);
+            animation: 0.3;
+            cursor: pointer;
+        }
+        
+        .submit:hover {
+            background: rgb(122, 17, 122);
+            transition: all 0.3 ease;
+        }
+        
+        #darkmode {
+            background: #0b0808;
+            color: #d6d6d6;
+        }
+        
+        #darkmode .submit {
+            background: rgb(23, 160, 41);
+        }
+        
+        #darkmode .submit:hover {
+            background: rgb(12, 92, 22);
+            transition: all 0.3 ease;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello Everyone<br>My Name Nabil Anugerah</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, temporibus praesentium est et, minima quisquam repellat dolore eos, hic ab amet quo commodi ullam voluptatum? At blanditiis, rerum, deserunt consequuntur alias adipisci iste architecto
+        aliquid doloribus ullam reiciendis. Obcaecati, libero.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, itaque minus, repellendus amet aperiam, pariatur nam facere neque reprehenderit vero similique? Reiciendis, ipsam. Quas, voluptatibus distinctio! Totam atque corrupti veniam magnam,
+        quisquam sit vitae at ea commodi quos esse laboriosam voluptatem facere id animi voluptatibus, quae numquam. Quisquam, animi corporis.</p>
+
+    <button class="submit">submit</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, temporibus praesentium est et, minima quisquam repellat dolore eos, hic ab amet quo commodi ullam voluptatum? At blanditiis, rerum, deserunt consequuntur alias adipisci iste architecto
+        aliquid doloribus ullam reiciendis. Obcaecati, libero.</p>
+    <br><br>
+    <h5 class="mode" onclick="setDarkMode(false)">Terang</h5>
+    <h5 class="mode" onclick="setDarkMode(true)">Gelap</h5>
+
+    <script>
+        if (localStorage.getItem('theme') == 'dark')
+            setDarkMode(true)
+
+        function setDarkMode(isDark) {
+
+            if (isDark) {
+                document.body.setAttribute('id', 'darkmode')
+                localStorage.setItem('theme', 'dark')
+            } else {
+                document.body.setAttribute('id', '')
+                localStorage.removeItem('theme')
+            }
+        }
+    </script>
+</body>
+
+</html>
